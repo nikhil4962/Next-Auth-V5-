@@ -24,7 +24,7 @@ model User {
   accounts      Account[]
   isTwoFactorEnabled Boolean @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
-  twoFactorConfirmationId String?  @db.ObjectId
+  
 }
 
 
