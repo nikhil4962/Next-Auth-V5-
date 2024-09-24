@@ -11,6 +11,7 @@ import { currentUser } from "@/lib/auth";
 import { generateVerificationToken } from "@/lib/tokens";
 import { sendVerificationEmail } from "@/lib/mail";
 
+
 export const settings = async (
     values: z.infer<typeof SettingsSchema>
 ) => {
@@ -23,7 +24,7 @@ export const settings = async (
     const dbUser = await getUserById(user.id);
 
     if(!dbUser) {
-        return { error: "Unauthorized" }
+        return { error: "Unauthorized!" };
     }  
 
         
