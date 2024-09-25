@@ -36,6 +36,8 @@ export const {
        //Allow OAuth without email verification
        if(account?.provider !== "credentials") return true;
 
+       if (!user?.id) return false;
+
       // const existingUser = await getUserById(user.id);
 
       const existingUser = await getUserById(user.id);
@@ -56,7 +58,7 @@ export const {
         });
        }
 
-       return true;
+       return true;  
       },
        async session({ token, session }) {
         if (token.sub && session.user) {
